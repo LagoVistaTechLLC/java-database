@@ -37,9 +37,9 @@ public class ConnectionTest {
 		Connection connection = ConnectionFactory.instanciate();
 		connection.setServer("localhost");
 		connection.setPort(54320);
-		connection.setDatabase("lvtdbtest");
+		connection.setDatabase("postgres");
 		connection.setUser("postgres");
-		connection.setPassword("Welcome123");
+		connection.setPassword("postgres");
 		return connection;
 	}
 	private String createVersionedTable(Connection connection) throws Exception {
