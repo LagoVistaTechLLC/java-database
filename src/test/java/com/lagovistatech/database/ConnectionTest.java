@@ -693,8 +693,16 @@ public class ConnectionTest {
 
 			row.set("Type Boolean", false);
 			
-			long cnt = connection.save(table);
-			assertTrue(cnt == 1);
+			connection.save(table);
+			
+			String sql = "SELECT * FROM " + connection.getAdapter().quoteIdentifier(tableName) + " WHERE " + connection.getAdapter().quoteIdentifier("GUID") + "=@Guid";
+			Parameters params = new Parameters();
+			params.put("@Guid", row.getGuid());
+			table = connection.fill(VersionedRowFactory.instance, sql, params);
+			if(table.size() != 1)
+				throw new Exception("Could not locate row!");
+			
+			assertTrue(table.get(0).getVersion() == 1);
 		}
 		finally {
 			deleteTable(connection, tableName);

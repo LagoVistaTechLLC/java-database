@@ -342,7 +342,7 @@ public class PostgresAdapter implements Adapter {
 		columnsSql += this.quoteIdentifier(VersionedRow.COLUMN_GUID);
 		valuesSql += this.objectToSql(values.get(VersionedRow.COLUMN_GUID));
 		columnsSql += ", " + this.quoteIdentifier(VersionedRow.COLUMN_VERSION);
-		valuesSql += ", " + this.objectToSql(values.get(VersionedRow.COLUMN_VERSION));
+		valuesSql += ", " + this.objectToSql(1);
 			
 		sql = sql.replace("%COLUMNS%", columnsSql).replace("%VALUES%", valuesSql);
 		
