@@ -99,7 +99,7 @@ public class VersionedRow extends AbstractRow implements Row, Versioned {
 	 * @throws Exception
 	 */
 	public void copyFrom(ResultSet source) throws Exception {
-		for(int cnt = 1; cnt < source.getMetaData().getColumnCount(); cnt++)
+		for(int cnt = 1; cnt <= source.getMetaData().getColumnCount(); cnt++)
 			set(source.getMetaData().getColumnLabel(cnt), source.getObject(cnt));
 	}
 	public String generateSave(Adapter adapter) throws Exception {

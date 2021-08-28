@@ -80,8 +80,6 @@ public class ConnectionImp implements Connection {
 	public <R extends Row> Table<R> fill(Factory<R> rowFactory, String sql) throws Exception { 
 		ResultSet rs = adapter.fill(sql);
 		
-		
-		
 		HashMap<String, String> schema = new HashMap<String, String>();
 		for(int cnt = 1; cnt <= rs.getMetaData().getColumnCount(); cnt++)
 			schema.put(rs.getMetaData().getColumnLabel(cnt), rs.getMetaData().getColumnTypeName(cnt));
