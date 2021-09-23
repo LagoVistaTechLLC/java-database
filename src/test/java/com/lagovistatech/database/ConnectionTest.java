@@ -18,7 +18,7 @@
 */
 package com.lagovistatech.database;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -27,7 +27,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 import org.apache.commons.codec.binary.Hex;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.lagovistatech.Helpers;
 import com.lagovistatech.database.internal.PostgresAdapter;
